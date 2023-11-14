@@ -13,7 +13,7 @@ jobs:
   SwiftBuild:
     name: Swift Build and Unit Tests
 
-    runs-on: macos-latest
+    runs-on: macos-12
 
     steps:
     - name: Checkout
