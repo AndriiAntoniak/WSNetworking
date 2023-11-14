@@ -16,10 +16,19 @@ jobs:
     runs-on: macos-latest
 
     steps:
-    - uses: actions/checkout@v3
-      with:
-        swift-version: "5.7.1"
+    - name: Checkout
+      uses: actions/checkout@v3
     - name: Build
       run: swift build -v
     - name: Run tests
       run: swift test -v
+      
+  SwiftPackageValidation:
+    name: Validate Swift package
+    
+    runs-on: macos-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Swift Package
+        run: swift package generate-xcodeproj
