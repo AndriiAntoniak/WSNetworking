@@ -26,6 +26,7 @@ public protocol NetworkingProtocol {
     ///   - url: url for the request.
     ///   - httpMethod: ``HTTPMethod`` of the url request.
     /// - Returns: An asynchronously-delivered result type that contains the URL contents as a generic decodable instance or the ``NetworkingError``.
+    @available(iOS 13.0.0, *)
     func performDataRequest(with url: URL, httpMethod: HTTPMethod) async -> Result<T, NetworkingError>
 }
 
@@ -40,6 +41,7 @@ public struct Networking<T: Decodable>: NetworkingProtocol {
         self.urlSession = urlSession
     }
     
+    @available(iOS 13.0.0, *)
     public func performDataRequest(with url: URL, httpMethod: HTTPMethod = .get) async -> Result<T, NetworkingError> {
         // TODO: - Implement URLRequestConstructable
         var urlRequest = URLRequest(url: url)
