@@ -31,6 +31,7 @@ public protocol NetworkingProtocol {
 }
 
 /// Public struct that conforms to the ``NetworkingProtocol`` and provides the interface to perform data `URLRequest`.
+@available(iOS 13.0.0, *)
 public struct Networking<T: Decodable>: NetworkingProtocol {
     private let urlSession: URLSession
     
